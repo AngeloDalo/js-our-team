@@ -69,11 +69,10 @@ button.addEventListener ('click', function (event) {
     const newTeam = {
       name: nameUser,
       role: roleUser,
-      img: imgUser
+      image: imgUser
     };
 
     team.push(newTeam);
-    console.log (newTeam);
     const container = document.querySelector('.team-container');
     addCards(team, container);
   }
