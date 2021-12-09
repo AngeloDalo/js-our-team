@@ -73,6 +73,7 @@ button.addEventListener ('click', function (event) {
     };
 
     team.push(newTeam);
+    console.log (newTeam);
     const container = document.querySelector('.team-container');
     addCards(team, container);
   }
