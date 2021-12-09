@@ -1,3 +1,22 @@
+function addCards(array, container) {
+  container.innerHTML = '';
+  for (let i = 0; i < array.length; i++) {
+    const singleTeam = array[i];
+
+    const addDiv = `
+    <div class="team-card">
+      <div class="card-image">
+        <img src="img/${singleTeam.image}" alt="">
+      </div>
+      <div class="card-text">
+        <h3>${singleTeam.name}</h3>
+        <p>${singleTeam.role}</p>
+      </div>
+    </div>`;
+    container.innerHTML += addDiv;
+  }
+}
+
 const team = [
   {
     name: 'Wayne Barnett',
@@ -30,3 +49,6 @@ const team = [
     image: 'barbara-ramos-graphic-designer.jpg',
   },
 ];
+
+const container = document.querySelector('.team-container');
+addCards(team, container);
