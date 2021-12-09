@@ -52,3 +52,28 @@ const team = [
 
 const container = document.querySelector('.team-container');
 addCards(team, container);
+
+const inputName = document.getElementById('name');
+const inputRole = document.getElementById('role');
+const inputImg = document.getElementById('image');
+const button = document.getElementById('addMemberButton');
+
+button.addEventListener ('click', function (event) {
+  event.preventDefault();
+
+  const nameUser = inputName.value;
+  const roleUser = inputRole.value;
+  const imgUser = inputImg.value;
+
+  if (nameUser.length > 0 && roleUser.length > 0) {
+    const newTeam = {
+      name: nameUser,
+      role: roleUser,
+      img: imgUser
+    };
+
+    team.push(newTeam);
+    const container = document.querySelector('.team-container');
+    addCards(team, container);
+  }
+});
